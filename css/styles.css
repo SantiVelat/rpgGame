@@ -35,7 +35,9 @@
 }
 
 /*GAME INITIAL MENU*/
-
+.selectGame, .confirmation-view{
+	padding:10px;
+}
 .selectGame{
 	background-color: #18D1E7;
 	position: relative;
@@ -44,16 +46,19 @@
 .confirmation-view{
 	background-color: #18D1E7;
 	position: relative;
-	top:80px;
+	top:100px;
 }
 .menu-selection{
 	width: 50%;
+	margin-bottom: 10px;
+
 }
 
 /*GAME STYLES*/
 .game-nav{
 	background-color:#0F7F8C;
 	max-height: 60px;
+    margin-bottom: 1.5%;
 }
 .game-nav > .container-fluid{
 	margin-bottom:0px;
@@ -83,4 +88,95 @@
 }
 .save-options > ul > li > a{
 	color:black;
+}
+
+.book{
+	background-color: #FEE68E;
+	position: absolute;
+	top:25%;
+	left:20%;
+	width:60%;
+	height:70%;
+	border-radius:1%;
+	padding:1%;
+}
+.totalhealth{
+ background-color: red;
+ width: 300px;
+ height: 10px;
+ position: relative;
+ left: 4%;
+ top: 35px;
+ border-radius: 4%;
+}
+.currenthealth{
+
+}
+.profileAvatar{
+  width: 40px;
+  height: 40px;
+}
+.profileAvatar > img{
+	max-width:100%;
+	border-radius: 50%;
+}
+.lineal{
+	float:left;
+}
+span.lineal{
+	margin-left: 1%;
+}
+.charname{
+	color: white;
+}
+.history-logs{
+	float:right;
+	color: white;
+	position: relative;
+	top: 45px;
+	right: 20px;
+}
+.history-logs > p{
+	font-size: 60%;
+}
+ .history-logs > p > span{
+ 	font-size:100%;
+}
+.history-context{
+	font-size: 80%;
+	min-height: 75%;
+	margin-top:auto;
+	margin-bottom: auto;
+}
+.decisions{
+	float:left;
+	font-size: 70%;
+	height: 25%;
+}
+.decision{
+	 min-width: 32%;
+	 max-width: 32%;
+}
+
+/*GAME LOGS*/
+ span.enemy{color:#FF5E1A;}span.ownDamage{color: #F40C00;}span.enemyDamage{color: #3C8EFF;}span.victory{color: #1BCA00;}span.terrain{color:#C68400;}span.object{color:#FFF729;}
+/*GAME EQUIPMENT*/
+
+.equipment > a > img, .usables > img {
+	width:50px;
+	height:50px;
+	display:block;
+	margin:20px;
+	position:relative;
+	top: 50px;
+	left:20px;
+}
+#weapon-collapse >a > img{
+	width:50px;
+	height:50px;
+	display:block;
+	margin-bottom:20px;
+	position:relative;
+	top: -10px;
+	left:100px;
 }

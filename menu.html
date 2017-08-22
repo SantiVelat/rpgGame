@@ -15,17 +15,7 @@
 			<ul class="game-nav-options pull-right">
 				<li><a href="#">Perfil</a></li><!--La foto de perfil de jugador puede ir en esta zona tambien-->
 				<li><a href="#">Estadísticas</a></li>
-				<li>
-					<a href="#" data-toggle="collapse" data-target="#save-collapse">Guardar/Salir</a>
-				</li>
 			</ul>
-		</div>
-		<div id="save-collapse" class="collapse save-options">
-			  <ul class="pull-right">
-				<li><a href="#">Guardar</a></li>
-				<li><a href="#">Guardar y salir</a></li>
-				<li><a href="#">Salir sin guardar</a></li>
-			  <ul>
 		</div>
 	</header>
 	<div class="container-fluid">
@@ -34,18 +24,23 @@
 			<button data-toggle="collapse" data-target="#loadgame-collapse" class="menu-selection">Load Game</button>
 			<button class="menu-selection">Shop</button>
 		</div>
+
+		<!---When angular is ready, here must be a default section containing some kind of information -->
+		<!--All this part will be made with angular ng-if or ng-show -->
 		<div class="confirmation-view col-md-offset-1 col-md-3">
-			<div id="newgame-collapse" class="menu-confirmation">
+			<div id="newgame-collapse" class="collapse menu-confirmation">
 			  <form class="input-group input-group-lg">
 				  <input class="new-game-item" name="characterName" type="text" placeholder="Character name" />
-				  <select>
+				  <select name="profession">
+				    <option value=""><small>Select a profession</small></option>
+				    <!---here will go the ng-option, depending of the professions in the database-->
 				    <option></option>
 				  </select>
 				  <!---here goes some kind of checkbox for the gender-->
 				  <button class="login-button" type="submit"><a href="game.html">Empieza la aventura!</a></button>
 			  </form>
 			</div>
-			<div id="loadgame-collapse" class="menu-confirmation">
+			<div id="loadgame-collapse" class="collapse menu-confirmation">
 			</div>
 		</div>
 	</div>
