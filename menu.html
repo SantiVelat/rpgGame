@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es/ES">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>development stage</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<header class="game-nav">
+		<div class="container-fluid">
+			<figure><a href=""><img src=""/></a><!--Aqui va la foto de perfil del jugador o logo del juego-->
+			</figure>
+			<ul class="game-nav-options pull-right">
+				<li><a href="#">Perfil</a></li><!--La foto de perfil de jugador puede ir en esta zona tambien-->
+				<li><a href="#">Estadísticas</a></li>
+				<li>
+					<a href="#" data-toggle="collapse" data-target="#save-collapse">Guardar/Salir</a>
+				</li>
+			</ul>
+		</div>
+		<div id="save-collapse" class="collapse save-options">
+			  <ul class="pull-right">
+				<li><a href="#">Guardar</a></li>
+				<li><a href="#">Guardar y salir</a></li>
+				<li><a href="#">Salir sin guardar</a></li>
+			  <ul>
+		</div>
+	</header>
+	<div class="container-fluid">
+		<div class="selectGame col-md-offset-2 col-md-3">
+			<button data-toggle="collapse" data-target="#newgame-collapse" class="menu-selection">New Game</button>
+			<button data-toggle="collapse" data-target="#loadgame-collapse" class="menu-selection">Load Game</button>
+			<button class="menu-selection">Shop</button>
+		</div>
+		<div class="confirmation-view col-md-offset-1 col-md-3">
+			<div id="newgame-collapse" class="menu-confirmation">
+			  <form class="input-group input-group-lg">
+				  <input class="new-game-item" name="characterName" type="text" placeholder="Character name" />
+				  <select>
+				    <option></option>
+				  </select>
+				  <!---here goes some kind of checkbox for the gender-->
+				  <button class="login-button" type="submit"><a href="game.html">Empieza la aventura!</a></button>
+			  </form>
+			</div>
+			<div id="loadgame-collapse" class="menu-confirmation">
+			</div>
+		</div>
+	</div>
+	<footer>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

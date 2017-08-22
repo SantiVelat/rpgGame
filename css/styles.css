@@ -1,0 +1,86 @@
+*{
+	font-family: Aclonica;
+	font-size: 24px;
+}
+/*LOGIN STYLES*/
+.loginPage, body{
+	background-color: black
+	}
+.loginBox{
+	position: absolute;
+	left: 38%;
+	top: 40%;
+	background-color: #18D1E7;
+	max-width: 21%;
+	height: 23%;
+	padding: 18px;
+	border-radius:3px;
+}
+.login-form{
+	height: 100%
+	width:100%;
+}
+.form-item{
+	display: block;
+	margin-bottom: 2%;
+	width: 100%;
+	font-size: 90%;
+	border-color: black;
+}
+.login-button{
+	width:100%;
+	background-color: #000000;
+	color: #18D1E7;
+	border-color: #18D1E7;
+}
+
+/*GAME INITIAL MENU*/
+
+.selectGame{
+	background-color: #18D1E7;
+	position: relative;
+	top:100px;
+}
+.confirmation-view{
+	background-color: #18D1E7;
+	position: relative;
+	top:80px;
+}
+.menu-selection{
+	width: 50%;
+}
+
+/*GAME STYLES*/
+.game-nav{
+	background-color:#0F7F8C;
+	max-height: 60px;
+}
+.game-nav > .container-fluid{
+	margin-bottom:0px;
+}
+
+.game-nav-options > li{
+	list-style-type: none;
+	position: relative;
+	top: -20px;
+}
+.game-nav-options > li, .game-nav-options > li > a{
+	float: left;
+	margin-left: 5	px;
+	margin-right: 20px;
+	color: black;
+}
+
+.save-options{
+	width:100%;
+	position: absolute;
+	background-color:#129DAE;
+	top: 60px;
+}
+.save-options > ul > li{
+    list-style-type: none;
+    margin-right: 27px;
+}
+.save-options > ul > li > a{
+	color:black;
+}
