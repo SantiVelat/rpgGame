@@ -4,7 +4,8 @@
   "description": "RPG Game, where you can choose your own path. Made with js, angular, jQuery, bootstrap, nodeJS, and webdocuments in html and pug formats",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app",
+    "dev": "nodemon app"
   },
   "repository": {
     "type": "git",
