@@ -51,21 +51,37 @@
 /*GAME INITIAL MENU*/
 .selectGame, .confirmation-view{
 	padding:10px;
+	z-index:-20;
+	border-radius:10%;
 }
 .selectGame{
-	background-color: #18D1E7;
+	background-color: #F5C851;
 	position: relative;
-	top:100px;
+	top:200px;
 }
 .confirmation-view{
-	background-color: #18D1E7;
+	background-color: #F5C851;
 	position: relative;
-	top:100px;
+	top:200px;
 }
 .menu-selection{
 	width: 50%;
 	margin-bottom: 10px;
 
+}
+#loadgame-collapse > div > a:link, #loadgame-collapse > div > a{
+	text-decoration:none;
+	color: black;
+}
+#loadgame-collapse > div{
+	display:block;
+}
+#loadgame-collapse > div > a:hover{
+	text-decoration:none;
+	color: red;
+}
+.new-game-item{
+	border-radius:5%;
 }
 
 /*GAME STYLES*/
@@ -89,7 +105,9 @@
 	margin-right: 20px;
 	color: black;
 }
-
+#save-collapse{
+	z-index:10;
+}
 .save-options{
 	width:100%;
 	position: absolute;
@@ -105,7 +123,7 @@
 }
 
 .book{
-	background-color: #FEE68E;
+	background-color: #FFB356;
 	position: absolute;
 	top:25%;
 	left:20%;
@@ -115,7 +133,7 @@
 	padding:1%;
 }
 .totalhealth{
- background-color: red;
+ background-color: #FFE4E2;
  width: 300px;
  height: 10px;
  position: relative;
@@ -124,7 +142,15 @@
  border-radius: 4%;
 }
 .currenthealth{
-
+background-color: #FF1300;
+height:100%;
+width: 75%;
+}
+.healtnumber{
+ color: red;
+ position:relative;
+ left:20px;
+ top:-2px;
 }
 .profileAvatar{
   width: 40px;
@@ -157,33 +183,45 @@ span.lineal{
  	font-size:100%;
 }
 .history-context{
+	background-color:#FFCE92;
 	font-size: 80%;
-	min-height: 75%;
-	margin-top:auto;
-	margin-bottom: auto;
+	min-height: 65%;
+	margin-bottom: 5%;
+	padding:10%;
+	vertical-align: middle;
+	border-radius: 15%;
 }
+
+/*GAME BUTTONS*/
 .decisions{
 	float:left;
 	font-size: 70%;
 	height: 25%;
+	min-width:100%;
 }
 .decision{
 	 min-width: 32%;
 	 max-width: 32%;
-}
+	 min-height: 100%;
+	 line-height: 150%}
+
 
 /*GAME LOGS*/
  span.enemy{color:#FF5E1A;}span.ownDamage{color: #F40C00;}span.enemyDamage{color: #3C8EFF;}span.victory{color: #1BCA00;}span.terrain{color:#C68400;}span.object{color:#FFF729;}
 /*GAME EQUIPMENT*/
-
+.equipment {
+	background-color:#CB7000;
+	position:relative;
+	top: 100px;
+	border-radius: 0 18% 18% 0;
+}
 .equipment > a > img, .usables > img {
 	width:50px;
 	height:50px;
 	display:block;
 	margin:20px;
-	position:relative;
-	top: 50px;
-	left:20px;
+	border:3px solid black;
+
 }
 #weapon-collapse >a > img{
 	width:50px;
@@ -285,3 +323,18 @@ author > a:hover{
 	text-decoration: none;
 	color: grey;
 }
+
+/*SCORE PAGE*/
+.scorePage{
+	position:fixed;
+	bottom:0px;
+	width:100%;
+}
+.scores{
+	width:100%;
+	margin-top:10%;
+}
+.grey{
+	background-color: #ECEBEB;
+}
+

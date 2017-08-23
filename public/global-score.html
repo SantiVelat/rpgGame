@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es/ES">
+<head>
+	<meta charset="UTF-8">
+	<title>development stage</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="website">
+    <header class="web-nav">
+		<div class="container-fluid">
+			<figure class="logo"><a href="index.html"><img src="img/logo.jpg"/></a><!--Aqui va la foto de perfil del jugador o logo del juego-->
+			</figure>
+			<ul class="web-nav-options pull-right">
+				<li><a href="#">Puntuaciones globales</a></li><!--La foto de perfil de jugador puede ir en esta zona tambien-->
+				<li><a href="about.html">About</a></li>
+				<li><a href="game/index.html"><strong>A jugar!</strong></a></li>
+			</ul>
+		</div>
+	</header>
+        <section>
+          <div class="container text-center">
+         	<h1>TOP 20 Aventureros</h1>
+         	<!---this will work with an ng-repeat-->
+         	<table class="scores">
+				<tr>
+				  <td><strong>Username</strong></td>
+				  <td><strong>Score</strong></td>
+				  <td><strong>Total loosed health</strong></td>
+				</tr>
+				<tr class="grey">
+				  <td>JuanPalomo</td>
+				  <td>55</td>
+				  <td>110</td>
+				</tr>
+				<tr>
+				  <td>YoMeLoGuiso</td>
+				  <td>60</td>
+				  <td>140</td>
+				</tr>
+				<tr class="grey">
+				  <td>YoMeLoComo</td>
+				  <td>60</td>
+				  <td>145</td>
+				</tr>
+				<tr>
+				  <td>YSiTuTambien</td>
+				  <td>40</td>
+				  <td>100</td>
+				</tr>
+				<tr class="grey">
+				  <td>QuieresComer</td>
+				  <td>70</td>
+				  <td>178,5</td>
+				</tr>
+				<tr>
+				  <td>TraeAlgoDeBeber</td>
+				  <td>65</td>
+				  <td>169</td>
+				</tr>
+			</table>
+          </div>
+        </section>
+	<footer class="scorePage">
+		<div class="container">
+			<a href="#">Contact</a>
+			<a href="#">FAQ</a>
+			<a href="#">Conditions</a>
+			<author class="pull-right">&copy; 2017 by <a href="#">Santi Velat</a></author>
+		</div>
+	</footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
