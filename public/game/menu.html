@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>development stage</title>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Aclonica">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/styles.css">
 	<link rel="stylesheet" href="../css/menu.css">
@@ -28,14 +29,14 @@
 		<!--All this part will be made with angular ng-if or ng-show -->
 		<div class="confirmation-view col-md-offset-1 col-md-3">
 			<div id="newgame-collapse" class="collapse menu-confirmation">
-			  <form class="input-group ">
-				  <input class="new-game-item" name="characterName" type="text" placeholder="Character name" />
-				  <select name="profession">
+			  <form class="input-group input-group-sm">
+				  <input class="new-game-item form-control" name="characterName" type="text" placeholder="Character name" />
+				  <select name="profession" class="new-game-selects">
 				    <option value=""><small>Select a profession</small></option>
 				    <!---here will go the ng-option, depending of the professions in the database-->
 				    <option></option>
 				  </select>
-				  <select name="origin">
+				  <select name="origin" class="new-game-selects">
 				    <option value=""><small>Select your origin</small></option>
 				    <!---here will go the ng-option, depending of the professions in the database-->
 				    <option></option>
