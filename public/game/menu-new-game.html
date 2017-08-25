@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es/ES">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>development stage</title>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Aclonica">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/styles.css">
+	<link rel="stylesheet" href="../css/menu.css">
+</head>
+<body style="background-image: url('../img/terrains.jpg');">
+	<div class="container">
+	    <div class="text-center">
+	       <p class="character-title">(Character name), soldado salvaje</p>
+	    </div>
+		<div class="confirmation-view col-md-offset-1 col-md-4">
+			<div class="menu-confirmation">
+			  <form class="input-group input-group-sm">
+				  <input class="new-game-item form-control" name="characterName" type="text" placeholder="Character name" />
+				  <select name="profession" class="new-game-selects">
+				    <option value=""><small>Guerrero</small></option>
+				    <!---here will go the ng-option, depending of the professions in the database-->
+				    <option></option>
+				  </select>
+				  <select name="origin" class="new-game-selects">
+				    <option value=""><small>Salvaje</small></option>
+				    <!---here will go the ng-option, depending of the professions in the database-->
+				    <option></option>
+				  </select>
+				  <!---here goes some kind of checkbox for the gender-->
+				  <button class="login-button" type="submit"><a href="game.html">Empieza la aventura!</a></button>
+			  </form>
+			  <p>(Character name), un soldado que usa su fuerza y una gran espada</p>
+			  <p>De origen salvaje, donde el coraje es su arma para sobrevivir</p>
+			</div>
+		</div>
+		<div class="col-md-offset-2 col-md-4 preview-box">
+			<img class="preview"  src="../img/guerrero.jpg">
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

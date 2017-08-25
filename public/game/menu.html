@@ -4,7 +4,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>development stage</title>
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Aclonica">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/styles.css">
 	<link rel="stylesheet" href="../css/menu.css">
@@ -19,37 +18,10 @@
 			</ul>
 	</header>
 	<div class="container">
-		<div class="selectGame col-md-offset-2 col-md-3 text-center">
-			<button data-toggle="collapse" data-target="#newgame-collapse" class="menu-selection btn btn-danger ribbon">New Game</button>
-			<button data-toggle="collapse" data-target="#loadgame-collapse" class="menu-selection btn btn-info ribbon">Load Game</button>
+		<div class="selectGame col-md-offset-4 col-md-4 text-center">
+			<button class="menu-selection btn btn-danger ribbon">New Game</button>
+			<button class="menu-selection btn btn-info ribbon">Load Game</button>
 			<button class="menu-selection btn btn-success ribbon">Shop</button>
-		</div>
-
-		<!---When angular is ready, here must be a default section containing some kind of information -->
-		<!--All this part will be made with angular ng-if or ng-show -->
-		<div class="confirmation-view col-md-offset-1 col-md-3">
-			<div id="newgame-collapse" class="collapse menu-confirmation">
-			  <form class="input-group input-group-sm">
-				  <input class="new-game-item form-control" name="characterName" type="text" placeholder="Character name" />
-				  <select name="profession" class="new-game-selects">
-				    <option value=""><small>Select a profession</small></option>
-				    <!---here will go the ng-option, depending of the professions in the database-->
-				    <option></option>
-				  </select>
-				  <select name="origin" class="new-game-selects">
-				    <option value=""><small>Select your origin</small></option>
-				    <!---here will go the ng-option, depending of the professions in the database-->
-				    <option></option>
-				  </select>
-				  <!---here goes some kind of checkbox for the gender-->
-				  <button class="login-button" type="submit"><a href="game.html">Empieza la aventura!</a></button>
-			  </form>
-			</div>
-			<div id="loadgame-collapse" class="collapse menu-confirmation">
-				  <div><a href="#">Current game 1</a><span class="pull-right">45%</span></div>
-				  <div><a href="#">Current game 2</a><span class="pull-right">10%</span></div>
-				  <div><a href="#">Current game 3</a><span class="pull-right">1%</span></div>
-			</div>
 		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
