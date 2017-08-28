@@ -1,0 +1,18 @@
+doctype html
+html(lang='es/ES')
+  head
+    meta(charset='UTF-8')
+    title development stage
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    include includes/styles.pug
+  body.loginPage
+    .container.registerBox
+      form.input-group.input-group-lg.register-form
+        input.form-item(name='email', type='text', placeholder=' Email')
+        input.form-item(name='username', type='text', placeholder=' Username')
+        input.form-item(pswd='pswd', type='password', placeholder=' Password')
+        input.form-item(pswd='pswd-repeat', type='password', placeholder=' Password repeat')
+        button.register-button(type='submit')
+          a(href='game.html') Register
+      img.social-login(src='img/social-net.png')
+    a(href='game/index.html') let's test

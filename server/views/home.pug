@@ -1,0 +1,49 @@
+extends layout/index.pug
+
+block content
+    // -Carousel
+    // -If the time goes on my side, would like introduce some card on each picture, with some kind of information about the game terrains or enemies
+    #homeCarousel.carousel.slide(data-ride='carousel')
+      ol.carousel-indicators
+        li.active(data-target='#homeCarousel', data-slide-to='0')
+        li(data-target='#homeCarousel', data-slide-to='1')
+        li(data-target='#homeCarousel', data-slide-to='2')
+      .carousel-inner
+        .item.active
+          img(src='img/forest2.jpg')
+        .item
+          img(src='img/cave.jpg', alt='Chicago')
+        .item
+          img(src='img/forest.jpg', alt='New York')
+      a.left.carousel-control(href='#homeCarousel', data-slide='prev')
+        span.glyphicon.glyphicon-chevron-left
+        span.sr-only Previous
+      a.right.carousel-control(href='#homeCarousel', data-slide='next')
+        span.glyphicon.glyphicon-chevron-right
+        span.sr-only Next
+    section
+      .container.text-center
+        h1 Juega tu propia aventura
+        p
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus nemo saepe vero officia ipsam itaque neque beatae non repudiandae, quibusdam vel molestiae ipsum suscipit, obcaecati eos sed, ducimus minus. Mollitia!
+    section.blue(style="background-image: url('img/alone.jpg'); background-repeat: no-repeat; background-position: center center; background-size: cover; color: white; text-shadow:2px 2px black; ")
+      .container
+        .col-md-4.text-center
+          h2 Toma tus propias decisiones
+          p
+            | Vel deleniti, excepturi ratione laudantium illo enim? Explicabo repellat nesciunt placeat iste totam esse ipsam quaerat!
+        .col-md-4.text-center
+          h2 Descubre todos los caminos
+          p
+            | Vel deleniti, excepturi ratione laudantium illo enim? Explicabo repellat nesciunt placeat iste totam esse ipsam quaerat!
+        .col-md-4.text-center
+          h2 Vigila las reacciones enemigas!
+          p
+            | Vel deleniti, excepturi ratione laudantium illo enim? Explicabo repellat nesciunt placeat iste totam esse ipsam quaerat!
+    section
+      .container.text-center
+        h2 Como empezar
+        p
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis modi facere omnis eius, similique voluptatum odio? Eius blanditiis labore in impedit architecto eaque ipsam, dignissimos minima debitis excepturi rerum ab.
+        a(href='register.html')
+          button.btn.btn-primary.home-button A jugar!
