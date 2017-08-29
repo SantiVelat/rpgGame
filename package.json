@@ -1,11 +1,12 @@
-{
+{ 
+  "title": "rpgGame",
   "name": "game",
   "version": "1.0.0",
   "description": "RPG Game, where you can choose your own path. Made with js, angular, jQuery, bootstrap, nodeJS, and webdocuments in html and pug formats",
   "main": "app.js",
   "scripts": {
-    "start": "node app",
-    "dev": "nodemon app"
+    "start": "node server/app",
+    "dev": "nodemon server/app"
   },
   "repository": {
     "type": "git",
