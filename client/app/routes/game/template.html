@@ -1,0 +1,44 @@
+<div class="backgrounds" style="background-image: url('../img/forest.jpg'); background-repeat: no-repeat; background-position: center center; background-size: cover;">
+	<div class="container-fluid">
+		<aside class="stats">
+			<figure class=" lineal profileAvatar"><img src="../img/face.png"/></figure><!---The player image or some kind of default avatar-->
+			<span class="lineal charname">Character name</span><!---with angular here goes the name of the player, or character-->
+			<div class="totalhealth">
+				<div class="currenthealth">
+				</div>
+			</div>
+			<p class="healtnumber">75%</p><!--This will be dinamic, based on the current health-->
+		</aside>
+		<div class="book text-center" style="opacity:0.9">
+				<!---here goes the ng-view, changing on each part-->
+			<p class="history-context">loremLorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi doloremque cum libero voluptatem incidunt dicta aperiam odio quis nemo totam possimus ad magni voluptatum, perferendis minus veniam sed porro eaque.</p>
+			<div class="decisions">
+			  <button class="btn btn-danger decision">First posible decision</button>
+			  <button class="btn btn-danger decision">Second posible decision<br>, and that-one is longer</button>
+			  <button class="btn btn-danger decision">Third posible decision</button>
+            </div>		
+		</div>
+	</div>
+	<aside class="equipment pull-left">
+		<a data-toggle="collapse" data-target="#weapon-collapse" href="#"><img src="../img/sword.png"/></a>
+		    <div id="weapon-collapse" class="collapse">
+				<a href="#"><img src="../img/sword2.jpg"/></a>
+				<a href="#"><img src="../img/sword3.jpg"/></a>
+				<a href="#"><img src="../img/sword4.jpg"/></a>
+		    </div>
+		<a href="#"><img src="../img/armor.jpg"/></a>
+		<div class="usables">
+			<img src="../img/healthpotion.jpg"/>
+			<img src="../img/damagepotion.jpg"/>
+		</div>
+	</aside>
+	<aside class="history-logs pull-right">
+		<!--with angular here will be appearing the last events, just showing the 20 lasts-->
+		<p>Has encontrado un <span class="enemy">lobo</span></p>
+		<p>Perdida de <span class="ownDamage">47</span> hp</p>
+		<p>Has inflingido <span class="enemyDamage">78</span> de daño</p>
+		<p>Has vencido al <span class="victory">lobo</span></p>
+		<p>Has entrado en un <span class="terrain">bosque</span></p>
+		<p>Has encontrado una <span class="object">espada</span></p>
+	</aside>
+</div>

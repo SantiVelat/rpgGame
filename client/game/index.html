@@ -1,21 +1,46 @@
-<!DOCTYPE html>
-<html lang="es/ES">
+ <!DOCTYPE html>
+<html lang="es/ES" ng-app="rpGame">
 <head>
-	<meta charset="UTF-8">
-	<title>development stage</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Aclonica">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>development stage</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="loginPage">
-	<div class="container loginBox">
-		<form class="input-group input-group-lg login-form">
-			<input class="form-item" name="username" type="text" placeholder=" Username" />
-			<input class="form-item"  pswd="pswd" type="password" placeholder=" Password" />
-			<a href="game.html"><button class="login-button" type="submit">Login</button></a>
-			<a href="menu.html">go-test</a>
-		</form>
-	</div>
+<body>
+ <ng-view></ng-view>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-route.min.js"></script>
+
+    <!--Bootstrap-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--Module-->
+    <script src="../app/app.js"></script>
+
+    <!--Services-->
+    <script src="../app/services/services.js"></script>
+
+    <!--Controllers
+    <script src="app/controllers/......"></script>
+     -->
+
+    <!--Menu-->
+    <script src="../app/routes/menu/controller.js"></script>
+    <script src="../app/routes/menu/config.js"></script>
+
+    <!--Menu-load-->
+    <script src="../app/routes/loadgame/controller.js"></script>
+    <script src="../app/routes/loadgame/config.js"></script>
+
+    <!--Menu-new-game-->
+    <script src="../app/routes/newgame/controller.js"></script>
+    <script src="../app/routes/newgame/config.js"></script>
+
+    <!--Game-->
+    <script src="../app/routes/game/controller.js"></script>
+    <script src="../app/routes/game/config.js"></script>
 </body>
+
 </html>
