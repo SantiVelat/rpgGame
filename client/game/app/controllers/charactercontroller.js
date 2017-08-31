@@ -7,8 +7,8 @@
   function CharacterController () {
     console.log('CharacterController loaded...')
     const self = this
-    self.characterName = 'palomo'
-    self.currentHealth = 100
+    self.characterName = 'Pep gay'
+    self.currentHealth = 1
     self.healthPercentage = (self.currentHealth / 300) * 100
   }
 
