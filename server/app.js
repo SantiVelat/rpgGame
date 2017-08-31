@@ -31,13 +31,14 @@ app.get('/register', (req, res) => {
 /*Should module that part*/
 
 
-const onResponse = function(id,data){
+const onResponse = function(data){
 	 return(data.toString())
 }
-const filterByid = function(id,data) {
-     return JSON.parse(data).filter(function(item){
+const filterByid = function(id, res, data) {
+     let phase= JSON.parse(data).filter(function(item){
     	return item.phaseId == id        
     })
+     res.send(phase)
 }
 const sendPhase = function(data){
 	res.send(JSON.stringify(data))
@@ -47,9 +48,8 @@ const onRejected = err => console.log('Cannot read the file.' + err)
 app.get('/api/historyPhase/:id', (req, res) => {
   const id = req.params.id
   fs('./server/history.json')
-  .then(onResponse.bind(null, id), onRejected)
-  .then(filterByid.bind(null, id))
-  .then(res.send)
+  .then(onResponse, onRejected)
+  .then(filterByid.bind(null, id, res))
 })
 
 app.listen(PORT)
