@@ -7,15 +7,13 @@
 				<div class="currenthealth" style="width: {{ CCVM.healthPercentage }}%">
 				</div>
 			</div>
-			<p class="healtnumber">{{ healthPercentage }}%</p><!--This will be dinamic, based on the current health-->
+			<p class="healtnumber">{{ CCVM.healthPercentage }}%</p><!--This will be dinamic, based on the current health-->
 		</aside>
 		<div class="book text-center" style="opacity:0.9">
 				<!---here goes the ng-view, changing on each part-->
-			<p class="history-context">loremLorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi doloremque cum libero voluptatem incidunt dicta aperiam odio quis nemo totam possimus ad magni voluptatum, perferendis minus veniam sed porro eaque.</p>
+			<p class="history-context">{{ GCVM.hystoryPhaseText }}</p>
 			<div class="decisions">
-			  <button class="btn btn-danger decision">First posible decision</button>
-			  <button class="btn btn-danger decision">Second posible decision<br>, and that-one is longer</button>
-			  <button class="btn btn-danger decision">Third posible decision</button>
+			  <button class="btn btn-danger decision" ng-repeat="decision in GCVM.decisions" ng-click="changeHistoryPhase(decision.next)">{{ decision.description }}</button>
             </div>		
 		</div>
 	</div>

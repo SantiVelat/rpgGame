@@ -1,0 +1,39 @@
+[
+  {
+	"phaseId" : "1",
+	"phaseDescription": "loremLorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi doloremque cum libero voluptatem incidunt dicta aperiam odio quis nemo totam possimus ad magni voluptatum, perferendis minus veniam sed porro eaquelorem",
+    "decisions": [
+    	{
+    		"description":"descritpion decision 1",
+    		"next": "2"
+    	},
+    	{
+    		"description":"descritpion decision 2",
+    		"next": "3",
+    	},
+    	{
+    		"description":"descritpion decision 3",
+    		"next": "4"
+    	}
+    ]
+  },
+  {
+	"phaseId" : "2",
+	"phaseDescription": "loremLorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi doloremque cum libero voluptatem incidunt dicta aperiam odio quis nemo totam possimus ad magni voluptatum, perferendis minus veniam sed porro eaquelorem",
+    "decisions": [
+    	{
+    		"description":"descritpion decision 1",
+    		"next": "4"
+    	},
+    	{
+    		"description":"descritpion decision 2",
+    		"next": "5",
+    	},
+    	{
+    		"description":"descritpion decision 3",
+    		"next": "1"
+    	}
+    ]
+  }
+
+]
