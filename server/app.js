@@ -7,11 +7,11 @@ app.set('view engine', 'pug')
 app.use(express.static(path.join(__dirname, '../client')))
 app.set('views', path.join(__dirname, 'views'))
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  next()
+})
 
 app.get('/', (req, res) => {
   res.render('home')
@@ -28,21 +28,18 @@ app.get('/score', (req, res) => {
 app.get('/register', (req, res) => {
   res.render('register')
 })
-/*Should module that part*/
+/* Should module that part */
 
+const onResponse = function (data) {
+  return (data.toString())
+}
+const filterByid = function (id, res, data) {
+  let phase = JSON.parse(data).filter(function (item) {
+    return item.phaseId === id
+  })
+  res.send(JSON.stringify(phase))
+}
 
-const onResponse = function(data){
-	 return(data.toString())
-}
-const filterByid = function(id, res, data) {
-     let phase= JSON.parse(data).filter(function(item){
-    	return item.phaseId == id        
-    })
-     res.send(phase)
-}
-const sendPhase = function(data){
-	res.send(JSON.stringify(data))
-}
 const onRejected = err => console.log('Cannot read the file.' + err)
 
 app.get('/api/historyPhase/:id', (req, res) => {
@@ -53,4 +50,4 @@ app.get('/api/historyPhase/:id', (req, res) => {
 })
 
 app.listen(PORT)
-console.log(`listening on PORT ${ PORT }`)
+console.log(`listening on PORT ${PORT}`)

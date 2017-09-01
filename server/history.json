@@ -1,44 +1,302 @@
 [
   {
-	"phaseId" : "1",
-	"phaseDescription": "ipsum dolor sit amet, consectetur adipisicing elit. Eligendi doloremque cum libero voluptatem incidunt dicta aperiam odio quis nemo totam possimus ad magni voluptatum, perferendis minus veniam sed porro eaquelorem",
+	"phaseId" : "2",
+	"phaseDescription": "Te lleva hasta una casa en medio del bosque. Por el camino a penas te ha mirado... -'Pensaba que no volveria a verte'- ",
     "decisions": 
         {
     	"decision1":
             {
-        		"description":"descritpion decision 1",
-        		"next": "2"
+        		"description":"'Yo tambien me alegro de verte'",
+        		"next": "5"
         	},
         "decision2":
         	{
-        		"description":"descritpion decision 2",
-        		"next": "3"
+        		"description":"'Quien eres?'",
+        		"next": "6"
         	},
         "decision3":
         	{
-        		"description":"descritpion decision 3",
-        		"next": "4"
+        		"description":"'Quien soy?'",
+        		"next": "7"
         	}
         }
 
   },
   {
-	"phaseId" : "2",
-	"phaseDescription": "loremLorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi doloremque cum libero voluptatem incidunt dicta aperiam odio quis nemo totam possimus ad magni voluptatum, perferendis minus veniam sed porro eaquelorem",
-    "decisions": [
-    	{
-    		"description":"descritpion decision 1",
-    		"next": "4"
-    	},
-    	{
-    		"description":"descritpion decision 2",
-    		"next": "5"
-    	},
-    	{
-    		"description":"descritpion decision 3",
-    		"next": "1"
-    	}
-    ]
-  }
+    "phaseId" : "3",
+    "phaseDescription": "Decides marcharte, abriendote paso entre la ultitud. No llevas nada encima...",
+    "decisions": 
+        {
+        "decision1":
+            {
+                "description":"Buscar un lugar donde dormir",
+                "next": "5"
+            },
+        "decision2":
+            {
+                "description":"Salid del pueblo",
+                "next": "6"
+            },
+        "decision3":
+            {
+                "description":"Ve a buscar al señor",
+                "next": "7"
+            }
+        }
+
+  },
+  {
+    "phaseId" : "4",
+    "phaseDescription": "-'Vaya, veo que de verdad no recuerdas nada... Acompañame, aqui no podemo hablar'- -'No te fies de el, no te dara nada bueno!'- alguien grita de fondo...",
+    "decisions": 
+        {
+        "decision1":
+            {
+                "description":"Acompañar lo",
+                "next": "2"
+            },
+        "decision2":
+            {
+                "description":"Marcharte",
+                "next": "3"
+            },
+        "decision3":
+            {
+                "description":"Insistir en quien es",
+                "next": "8"
+            }
+        }
+
+   },
+   {
+    "phaseId" : "5",
+    "phaseDescription": "-'Bien, me alegro de que recuerdes quienes somos. Coge ese espada, tenemos trabajo'-",
+    "decisions": 
+        {
+        "decision1":
+            {
+                "description":"'A donde vamos?'",
+                "next": "9"
+            },
+        "decision2":
+            {
+                "description":"'De acuerdo'",
+                "next": "10"
+            },
+        "decision3":
+            {
+                "description":"'Arma? Para que?'",
+                "next": "11"
+            }
+        }
+
+    },
+    {
+    "phaseId" : "6",
+    "phaseDescription": "'Vaya, veo que de verdad no recuerdas nada... Ese ogro debio de golpearte fuerte... Soy el que ha estado entrenandote todo este tiempo.. Y no porque si; debemos evitar que las criaturas se sigan descontrolando. Te acuerdas de luchar?",
+    "decisions": 
+        {
+        "decision1":
+            {
+                "description":"'Si, en marcha'",
+                "next": "10"
+            },
+        "decision2":
+            {
+                "description":"'No, no me acuerdo'",
+                "next": "12"
+            },
+        "decision3":
+            {
+                "description":"'Espera, criaturas decontrolandose?'",
+                "next": "13"
+            }
+        }
+
+    },
+    {
+    "phaseId" : "7",
+    "phaseDescription": "'Eres ${self.characterName}, un chico tonto que no hizo caso a su maestro cuando le dijo que no se podia enfrentar solo contra un ogro. Yo! Benjen! Por si no te ha quedado claro... Recuerdas como pelear?",
+    "decisions": 
+        {
+        "decision1":
+            {
+                "description":"'Si, mas o menos'",
+                "next": "10"
+            },
+        "decision2":
+            {
+                "description":"'No, no me acuerdo'",
+                "next": "12"
+            },
+        "decision3":
+            {
+                "description":"'Mi maestro? para que?'",
+                "next": "13"
+            }
+        }
+
+    },
+    {
+    "phaseId" : "8",
+    "phaseDescription": "'Tan tozudo como siempre... Soy benjen, tu mentor; y espero que recuperes pronto la memoria, las criaturas no van a esperar, y se estan descontrolando cada vez mas rapido.'- La gente de tu alrededor empieza a poner nerviosa -'Vamonos, no podemos eguir hablando aqui'-",
+    "decisions": 
+        {
+        "decision1":
+            {
+                "description":"'Acompañarle'",
+                "next": "10"
+            },
+        "decision2":
+            {
+                "description":"'Negarse e irte'",
+                "next": "6"
+            },
+        "decision3":
+            {
+                "description":"'Y yo quien soy?'",
+                "next": "7"
+            }
+        }
+
+    },
+    {
+    "phaseId" : "8",
+    "phaseDescription": "'Tan tozudo como siempre... Soy benjen, tu mentor; y espero que recuperes pronto la memoria, las criaturas no van a esperar, y se estan descontrolando cada vez mas rapido.'- La gente de tu alrededor empieza a poner nerviosa -'Vamonos, no podemos eguir hablando aqui'-",
+    "decisions": 
+        {
+        "decision1":
+            {
+                "description":"'Acompañarle'",
+                "next": "10"
+            },
+        "decision2":
+            {
+                "description":"'Negarse e irte'",
+                "next": "6"
+            },
+        "decision3":
+            {
+                "description":"'Y yo quien soy?'",
+                "next": "7"
+            }
+        }
+
+    },
+    {
+    "phaseId" : "9",
+    "phaseDescription": "-'Al bosque, a comprobar que aun sabes pelear'-",
+    "decisions": 
+        {
+        "decision1":
+            {
+                "description":"'Vamos!'",
+                "next": "10"
+            },
+        "decision2":
+            {
+                "description":"'No lo recuerdo!'",
+                "next": "13"
+            },
+        "decision3":
+            {
+                "description":"'em... tengo que ir al baño!'",
+                "next": "2"
+            }
+        }
+
+    },
+    {
+    "phaseId" : "10",
+    "phaseDescription": "Salís hacia el bosque, y nada mas salir, encontrais un lobo, en posicion ofensiva y con los ojos inyectados en sangre.",
+    "decisions": 
+        {
+        "decision1":
+            {
+                "description":"'Lucha'",
+                "next": "2"
+            },
+        "decision2":
+            {
+                "description":"'Lucha'",
+                "next": "2"
+            },
+        "decision3":
+            {
+                "description":"'lucha'",
+                "next": "2"
+            }
+        }
+
+    },
+    {
+    "phaseId" : "11",
+    "phaseDescription": "No insinuabas que lo recordabas...? Las critaturas se están descontrolando, y nosotros debemos detenerlas: Para eso hemos estado entrenando!",
+    "decisions": 
+        {
+        "decision1":
+            {
+                "description":"'De acuerdo, vamos!'",
+                "next": "10"
+            },
+        "decision2":
+            {
+                "description":"Esto no va conmigo!",
+                "next": "100"
+            },
+        "decision3":
+            {
+                "description":"'Criaturas descontrolandose?'",
+                "next": "13"
+            }
+        }
+
+    },
+    {
+    "phaseId" : "12",
+    "phaseDescription": "El instinto hará que lo recuerdes.. estaré a tu lado por si necesitas ayuda!",
+    "decisions": 
+        {
+        "decision1":
+            {
+                "description":"'De acuerdo, vamos!'",
+                "next": "10"
+            },
+        "decision2":
+            {
+                "description":"Esto no va conmigo!",
+                "next": "100"
+            },
+        "decision3":
+            {
+                "description":"'Bueno... lo intentaré'",
+                "next": "10"
+            }
+        }
+
+    },
+    {
+    "phaseId" : "13",
+    "phaseDescription": "-'Las criaturas se están descontrolando, mucho y muy rápido, atacan a viajeros y comerciantes... la gente no puede salir de sus pueblos. Debemos encontrar la forma de frenar este caos!",
+    "decisions": 
+        {
+        "decision1":
+            {
+                "description":"'Bien! en marcha entonces'",
+                "next": "10"
+            },
+        "decision2":
+            {
+                "description":"Esto no va conmigo!",
+                "next": "100"
+            },
+        "decision3":
+            {
+                "description":"'Sabemos el porque?'",
+                "next": "100"
+            }
+        }
+
+    }
 
 ]

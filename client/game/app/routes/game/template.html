@@ -11,9 +11,9 @@
 		</aside>
 		<div class="book text-center" style="opacity:0.9">
 				<!---here goes the ng-view, changing on each part-->
-			<p class="history-context">{{ GCVM.hystoryPhaseText }}</p>
+			<p class="history-context" ng-bind-html="GCVM.hystoryPhaseText"></p>
 			<div class="decisions">
-			  <button class="btn btn-danger decision" ng-repeat="decision in GCVM.decisions" ng-click="GCVM.changeHistoryPhase(1)">{{ decision.description }}</button>
+			  <button class="btn btn-danger decision" ng-repeat="decision in GCVM.decisions" ng-click="GCVM.changeHistoryPhase(decision.next)">{{ decision.description }}</button>
             </div>		
 		</div>
 	</div>

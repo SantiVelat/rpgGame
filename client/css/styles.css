@@ -261,7 +261,8 @@ span.lineal{
 	 min-width: 32%;
 	 max-width: 32%;
 	 min-height: 100%;
-	 line-height: 150%}
+	 line-height: 150%;
+	 white-space: normal;}
 
 
 /*GAME LOGS*/
