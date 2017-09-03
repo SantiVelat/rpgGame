@@ -33,9 +33,9 @@ app.get('/register', (req, res) => {
 const onResponse = function (data) {
   return (data.toString())
 }
-const filterByid = function (id, res, data) {
+const filterByidandSend = function (id, res, data) {
   let phase = JSON.parse(data).filter(function (item) {
-    return item.phaseId === id
+    return item.id === id
   })
   res.send(JSON.stringify(phase))
 }
@@ -46,7 +46,14 @@ app.get('/api/historyPhase/:id', (req, res) => {
   const id = req.params.id
   fs('./server/history.json')
   .then(onResponse, onRejected)
-  .then(filterByid.bind(null, id, res))
+  .then(filterByidandSend.bind(null, id, res))
+})
+
+app.get('/api/getEnemy/:id', (req, res) => {
+  const id = req.params.id
+  fs('./server/enemies.json')
+  .then(onResponse, onRejected)
+  .then(filterByidandSend.bind(null, id, res))
 })
 
 app.listen(PORT)

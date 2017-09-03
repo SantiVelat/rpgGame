@@ -250,6 +250,31 @@ span.lineal{
 	border-radius: 15%;
 }
 
+.forest{
+	background-image: url('../img/forest.jpg'); 
+	background-repeat: no-repeat; 
+	background-position: center center; 
+	background-size: cover;"
+}
+.town{
+    background-image: url('../img/town.jpg'); 
+	background-repeat: no-repeat; 
+	background-position: center center; 
+	background-size: cover;"
+}
+.forest-house{
+    background-image: url('../img/forest-house.jpg'); 
+	background-repeat: no-repeat; 
+	background-position: center center; 
+	background-size: cover;"
+}
+.combat{
+    background-image: url('../img/combat.jpg'); 
+	background-repeat: no-repeat; 
+	background-position: center center; 
+	background-size: cover;"
+}
+
 /*GAME BUTTONS*/
 .decisions{
 	float:left;

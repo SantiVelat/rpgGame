@@ -12,5 +12,13 @@
                       callback(response.data)
                     })
     }
+    this.currentHealth=80
+    self.setCurrentHealth=function(life){
+      self.currentHealth = life
+      if (self.currentHealth<=0){
+        
+      }
+    }
+   /*Porque con self. no me funciona??*/
   }
 })()

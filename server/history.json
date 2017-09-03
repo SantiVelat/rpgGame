@@ -1,13 +1,13 @@
 [
   {
-	"phaseId" : "2",
+	"id" : "2",
 	"phaseDescription": "Te lleva hasta una casa en medio del bosque. Por el camino a penas te ha mirado... -'Pensaba que no volveria a verte'- ",
     "decisions": 
         {
     	"decision1":
             {
         		"description":"'Yo tambien me alegro de verte'",
-        		"next": "5"
+        		"next": 5
         	},
         "decision2":
         	{
@@ -19,11 +19,12 @@
         		"description":"'Quien soy?'",
         		"next": "7"
         	}
-        }
+        },
+    "terrain":"forest-house"
 
   },
   {
-    "phaseId" : "3",
+    "id" : "3",
     "phaseDescription": "Decides marcharte, abriendote paso entre la ultitud. No llevas nada encima...",
     "decisions": 
         {
@@ -42,11 +43,12 @@
                 "description":"Ve a buscar al señor",
                 "next": "7"
             }
-        }
+        },
+    "terrain":"town"
 
   },
   {
-    "phaseId" : "4",
+    "id" : "4",
     "phaseDescription": "-'Vaya, veo que de verdad no recuerdas nada... Acompañame, aqui no podemo hablar'- -'No te fies de el, no te dara nada bueno!'- alguien grita de fondo...",
     "decisions": 
         {
@@ -65,11 +67,12 @@
                 "description":"Insistir en quien es",
                 "next": "8"
             }
-        }
+        },
+    "terrain":"town"
 
    },
    {
-    "phaseId" : "5",
+    "id" : "5",
     "phaseDescription": "-'Bien, me alegro de que recuerdes quienes somos. Coge ese espada, tenemos trabajo'-",
     "decisions": 
         {
@@ -88,11 +91,12 @@
                 "description":"'Arma? Para que?'",
                 "next": "11"
             }
-        }
+        },
+    "terrain":"forest-house"
 
     },
     {
-    "phaseId" : "6",
+    "id" : "6",
     "phaseDescription": "'Vaya, veo que de verdad no recuerdas nada... Ese ogro debio de golpearte fuerte... Soy el que ha estado entrenandote todo este tiempo.. Y no porque si; debemos evitar que las criaturas se sigan descontrolando. Te acuerdas de luchar?",
     "decisions": 
         {
@@ -111,12 +115,13 @@
                 "description":"'Espera, criaturas decontrolandose?'",
                 "next": "13"
             }
-        }
+        },
+    "terrain":"forest-house"
 
     },
     {
-    "phaseId" : "7",
-    "phaseDescription": "'Eres ${self.characterName}, un chico tonto que no hizo caso a su maestro cuando le dijo que no se podia enfrentar solo contra un ogro. Yo! Benjen! Por si no te ha quedado claro... Recuerdas como pelear?",
+    "id" : "7",
+    "phaseDescription": "'Eres la persona que no me hizo caso cuando te dije que no te enfrentases contra un ogro por tu cuenta! No me hiciste caso... a tu maestro! Recuerdas como pelear?",
     "decisions": 
         {
         "decision1":
@@ -134,12 +139,13 @@
                 "description":"'Mi maestro? para que?'",
                 "next": "13"
             }
-        }
+        },
+    "terrain":"forest-house"
 
     },
     {
-    "phaseId" : "8",
-    "phaseDescription": "'Tan tozudo como siempre... Soy benjen, tu mentor; y espero que recuperes pronto la memoria, las criaturas no van a esperar, y se estan descontrolando cada vez mas rapido.'- La gente de tu alrededor empieza a poner nerviosa -'Vamonos, no podemos eguir hablando aqui'-",
+    "id" : "8",
+    "phaseDescription": "'Tanta cabezoneria como siempre... Soy benjen, tu mentor; y espero que recuperes pronto la memoria, las criaturas no van a esperar, y se estan descontrolando cada vez mas rapido.'- La gente de tu alrededor empieza a poner nerviosa -'Vamonos, no podemos eguir hablando aqui'-",
     "decisions": 
         {
         "decision1":
@@ -157,34 +163,12 @@
                 "description":"'Y yo quien soy?'",
                 "next": "7"
             }
-        }
+        },
+    "terrain":"town"
 
     },
     {
-    "phaseId" : "8",
-    "phaseDescription": "'Tan tozudo como siempre... Soy benjen, tu mentor; y espero que recuperes pronto la memoria, las criaturas no van a esperar, y se estan descontrolando cada vez mas rapido.'- La gente de tu alrededor empieza a poner nerviosa -'Vamonos, no podemos eguir hablando aqui'-",
-    "decisions": 
-        {
-        "decision1":
-            {
-                "description":"'Acompañarle'",
-                "next": "10"
-            },
-        "decision2":
-            {
-                "description":"'Negarse e irte'",
-                "next": "6"
-            },
-        "decision3":
-            {
-                "description":"'Y yo quien soy?'",
-                "next": "7"
-            }
-        }
-
-    },
-    {
-    "phaseId" : "9",
+    "id" : "9",
     "phaseDescription": "-'Al bosque, a comprobar que aun sabes pelear'-",
     "decisions": 
         {
@@ -203,34 +187,19 @@
                 "description":"'em... tengo que ir al baño!'",
                 "next": "2"
             }
-        }
+        },
+    "terrain":"forest-house"
 
     },
     {
-    "phaseId" : "10",
+    "id" : "10",
     "phaseDescription": "Salís hacia el bosque, y nada mas salir, encontrais un lobo, en posicion ofensiva y con los ojos inyectados en sangre.",
-    "decisions": 
-        {
-        "decision1":
-            {
-                "description":"'Lucha'",
-                "next": "2"
-            },
-        "decision2":
-            {
-                "description":"'Lucha'",
-                "next": "2"
-            },
-        "decision3":
-            {
-                "description":"'lucha'",
-                "next": "2"
-            }
-        }
-
+    "enemies": [0],
+    "terrain":"combat",
+    "next":"1"
     },
     {
-    "phaseId" : "11",
+    "id" : "11",
     "phaseDescription": "No insinuabas que lo recordabas...? Las critaturas se están descontrolando, y nosotros debemos detenerlas: Para eso hemos estado entrenando!",
     "decisions": 
         {
@@ -249,11 +218,12 @@
                 "description":"'Criaturas descontrolandose?'",
                 "next": "13"
             }
-        }
+        },
+    "terrain":"forest-house"
 
     },
     {
-    "phaseId" : "12",
+    "id" : "12",
     "phaseDescription": "El instinto hará que lo recuerdes.. estaré a tu lado por si necesitas ayuda!",
     "decisions": 
         {
@@ -272,11 +242,12 @@
                 "description":"'Bueno... lo intentaré'",
                 "next": "10"
             }
-        }
+        },
+    "terrain":"forest-house"
 
     },
     {
-    "phaseId" : "13",
+    "id" : "13",
     "phaseDescription": "-'Las criaturas se están descontrolando, mucho y muy rápido, atacan a viajeros y comerciantes... la gente no puede salir de sus pueblos. Debemos encontrar la forma de frenar este caos!",
     "decisions": 
         {
@@ -295,7 +266,8 @@
                 "description":"'Sabemos el porque?'",
                 "next": "100"
             }
-        }
+        },
+    "terrain":"forest-house"
 
     }
 
