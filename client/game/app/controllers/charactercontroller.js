@@ -9,7 +9,7 @@
     const self = this
     self.characterName = 'Test character'
     self.currentHealth = DataService.currentHealth
-    self.maximHealth= 100
+    self.maximHealth = 100
     self.healthPercentage = Math.round((self.currentHealth / self.maximHealth) * 100)
   }
 
