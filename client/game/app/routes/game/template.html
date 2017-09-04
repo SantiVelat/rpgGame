@@ -1,34 +1,34 @@
-<div class="backgrounds" ng-class="GCVM.terrain">
+<div class="backgrounds" ng-class="gameCtrl.terrain">
 	<div class="container-fluid">
-		<aside class="stats" ng-controller="CharacterController as CCVM">
+		<aside class="stats" ng-controller="CharacterController as charCtrl">
 			<figure class="lineal profileAvatar"><img src="../img/face.png"/></figure><!---The player image or some kind of default avatar-->
-			<span class="lineal charname">{{ CCVM.characterName }}</span><!---with angular here goes the name of the player, or character-->
+			<span class="lineal charname">{{ charCtrl.characterName }}</span><!---with angular here goes the name of the player, or character-->
 			<div class="totalhealth">
-				<div class="currenthealth" style="width: {{ CCVM.healthPercentage }}%">
+				<div class="currenthealth" style="width: {{ charCtrl.getHealthPercentage() }}%">
 				</div>
 			</div>
-			<p class="healtnumber">{{ CCVM.healthPercentage }}%</p><!--This will be dinamic, based on the current health-->
+			<p class="healtnumber">{{ charCtrl.getHealthPercentage() }}%</p><!--This will be dinamic, based on the current health-->
 		</aside>
 		<div class="book text-center" style="opacity:0.9">
-			<span ng-if="GCVM.terrain=='combat'">
+			<span ng-if="gameCtrl.terrain=='combat'">
 			    <div class="totalhealth">
-				<div class="currenthealth" style="width: {{ GCVM.enemyHealth }}%">
+				<div class="currenthealth" style="width: {{ gameCtrl.enemyHealth }}%">
 				</div>
 			</div>
-			    <p class="history-context">{{ GCVM.combatContext }}</p>
+			    <p class="history-context">{{ gameCtrl.combatContext }}</p>
 				<div class="decisions">
-				  <button class="btn btn-danger decision" ng-repeat="movement in GCVM.movements" ng-click="GCVM.combatMovement(movement)">{{ movement.description }}</button>
+				  <button class="btn btn-danger decision" ng-repeat="movement in gameCtrl.movements" ng-click="gameCtrl.combatMovement(movement)">{{ movement.description }}</button>
 	            </div>
 			</span>
-			<span ng-if="GCVM.terrain!='combat'">
-				<p class="history-context" ng-bind-html="GCVM.hystoryPhaseText"></p>
+			<span ng-if="gameCtrl.terrain!='combat'">
+				<p class="history-context" ng-bind-html="gameCtrl.hystoryPhaseText"></p>
 				<div class="decisions">
-				  <button class="btn btn-danger decision" ng-repeat="decision in GCVM.decisions" ng-click="GCVM.changeHistoryPhase(decision.next)">{{ decision.description }}</button>
+				  <button class="btn btn-danger decision" ng-repeat="decision in gameCtrl.decisions" ng-click="gameCtrl.changeHistoryPhase(decision.next)">{{ decision.description }}</button>
 	            </div>
 	        </span>		
 		</div>
 	</div>
-	<aside class="equipment pull-left" ng-controller="CharacterController as CCVM">
+	<aside class="equipment pull-left" ng-controller="CharacterController as charCtrl">
 		<a data-toggle="collapse" data-target="#weapon-collapse" href="#"><img src="../img/sword.png"/></a>
 		    <div id="weapon-collapse" class="collapse">
 				<a href="#"><img src="../img/sword2.jpg"/></a>
