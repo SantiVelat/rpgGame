@@ -196,7 +196,7 @@
     "phaseDescription": "Salís hacia el bosque, y nada mas salir, encontrais un lobo, en posicion ofensiva y con los ojos inyectados en sangre.",
     "enemies": [0],
     "terrain":"combat",
-    "next":"1"
+    "next":"14"
     },
     {
     "id" : "11",
@@ -268,6 +268,30 @@
             }
         },
     "terrain":"forest-house"
+
+    },
+    {
+    "id" : "14",
+    "phaseDescription": "-'Bien, veo que no lo has olvidado todo! Aunque tenemos mucho trabajo por delante. Debemos encontrar la cueva verde. Un viejo amigo me ha comentado que hay muchas criaturas en esa zona. Por donde deberiamos ir?",
+    "decisions": 
+        {
+        "decision1":
+            {
+                "description":"'El bosque es la mejor opción!'",
+                "next": "15"
+            },
+        "decision2":
+            {
+                "description":"Sigamos el camino, es mas seguro",
+                "next": "16"
+            },
+        "decision3":
+            {
+                "description":"'Sigamos el rio, hay un paso subterraneo cerca.'",
+                "next": "17"
+            }
+        },
+    "terrain":"forest"
 
     }
 

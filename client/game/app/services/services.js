@@ -12,13 +12,13 @@
                       callback(response.data)
                     })
     }
-    this.currentHealth=80
-    self.setCurrentHealth=function(life){
+    this.currentHealth = 80
+    self.setCurrentHealth = function (life) {
       self.currentHealth = life
-      if (self.currentHealth<=0){
-        
+      if (self.currentHealth <= 0) {
+        $location.path('gameover')
       }
     }
-   /*Porque con self. no me funciona??*/
+   /* Porque con self. no me funciona?? */
   }
 })()

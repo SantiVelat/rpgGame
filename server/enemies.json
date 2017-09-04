@@ -1,7 +1,7 @@
 [	
 	{ "id":"0",
 	  "name": "wolf",
-	  "description": "Has visto un lobo blanco, con ojos hambrientos y la mirada fija en ti.. El lobo se prepara para saltar encima de ti.",
+	  "description": "Un lobo blanco, con ojos hambrientos y la mirada fija en ti.. Preparado para saltar encima tuyo.",
 	  "health": 100,
 	  "movements": 
 	  [
