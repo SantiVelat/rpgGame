@@ -10,7 +10,7 @@
         .then(success => {
           if (success) {
             toastr.success('succesfully logged')
-            $location.path('/dashboard')
+            $location.path('/menu')
           } else {
             toastr.error('try again!')
           }

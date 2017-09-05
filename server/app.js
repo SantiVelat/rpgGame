@@ -66,9 +66,9 @@ app.get('/api/getEnemy/:id', (req, res) => {
 const passport = require('./config/passport/')
 app.use(passport.initialize())
 
-// const authRoutes = require('./routes/auth/')
+const authRoutes = require('./routes/auth/')
 // const privateRoutes = require('./routes/private/')
-// app.use(authRoutes)
+app.use(authRoutes)
 // app.use(privateRoutes)
 
 

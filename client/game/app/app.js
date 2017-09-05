@@ -1,6 +1,6 @@
 /* global angular */
 (function () {
-  angular.module('rpGame', ['ngRoute', 'ngSanitize', 'angular-jwt'])
+  angular.module('rpGame', ['ngRoute', 'ngSanitize', 'toastr', 'angular-jwt'])
   
   .config(function ($httpProvider){
    $httpProvider.interceptors.push('AuthInterceptor')
