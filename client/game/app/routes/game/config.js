@@ -6,6 +6,7 @@ angular.module('rpGame')
     .when('/', {
       templateUrl: 'app/routes/game/template.html',
       controller: 'GameController',
-      controllerAs: 'gameCtrl'
+      controllerAs: 'gameCtrl',
+      secure: true
     })
   })

@@ -4,18 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>development stage</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bower_components/angular-toastr/dist/angular-toastr.min.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
  <ng-view></ng-view>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    
+      <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+      <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="../bower_components/angular/angular.min.js"></script>
+      <script src="../bower_components/angular-route/angular-route.min.js"></script>
+      <script src="../bower_components/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+      <script src="../bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
+      <script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-route.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular-sanitize.js"></script>
-
-    <!--Bootstrap-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular-sanitize.js"></script> -->
+  <!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
     <!--Module-->
     <script src="app/app.js"></script>
@@ -23,6 +30,10 @@
     <!--Services-->
     <script src="app/services/GameService.js"></script>
     <script src="app/services/CharacterService.js"></script>
+    <script src="app/services/AuthService.js"></script>
+    <script src="app/services/StorageService.js"></script>
+<!--     <script src="/app/services/ApiService.js"></script> -->
+    <script src="app/services/AuthInterceptor.js"></script>
 
     <!--Controllers-->
     <script src="app/controllers/CharacterController.js"></script>
@@ -39,6 +50,14 @@
     <!--Menu-new-game-->
     <script src="app/routes/newgame/controller.js"></script>
     <script src="app/routes/newgame/config.js"></script>
+
+    <!--Login-->
+    <script src="app/routes/login/controller.js"></script>
+    <script src="app/routes/login/config.js"></script>
+
+    <!--Register-->
+    <script src="app/routes/register/controller.js"></script>
+    <script src="app/routes/register/config.js"></script>
 
     <!--Game-->
     <script src="app/routes/game/controller.js"></script>

@@ -19,10 +19,15 @@
   },
   "homepage": "https://github.com/SantiVelat/rpgGame#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "fs-readfile-promise": "^3.0.0",
     "mongo": "^0.1.0",
     "mongoose": "^4.11.10",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.2.1",
     "pug": "^2.0.0-rc.3"
   }
 }

@@ -3,10 +3,18 @@ const path = require('path')
 const app = express()
 const fs = require('fs-readfile-promise')
 const mongoose = require('mongoose')
+const bodyParser= require('body-parser')
+
 const PORT = process.env.PORT || 3002
+
+global.__base = path.join(__dirname)
+
 app.set('view engine', 'pug')
 app.use(express.static(path.join(__dirname, '../client')))
 app.set('views', path.join(__dirname, 'views'))
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 const URL_DB = 'mongodb://admin:admingame@ds125914.mlab.com:25914/rpgame'
 mongoose.Promise = global.Promise
@@ -36,7 +44,6 @@ app.get('/score', (req, res) => {
 app.get('/register', (req, res) => {
   res.render('register')
 })
-/* Should module that part */
 
 app.get('/api/historyPhase/:id', (req, res) => {
   const id = req.params.id
@@ -47,19 +54,23 @@ app.get('/api/historyPhase/:id', (req, res) => {
 
 app.get('/api/getEnemy/:id', (req, res) => {
   const id = req.params.id
-  console.log('entra 2')
   Enemy.find({id})
    .then(enemyMatched => {
      res.json(enemyMatched)
    })
 })
-app.get('/api/getEnemy', (req, res) => {
-  console.log('entra')
-  Enemy.find()
-   .then(enemyMatched => {
-     res.json(enemyMatched)
-   })
-})
+
+
+/*passport*/
+
+const passport = require('./config/passport/')
+app.use(passport.initialize())
+
+// const authRoutes = require('./routes/auth/')
+// const privateRoutes = require('./routes/private/')
+// app.use(authRoutes)
+// app.use(privateRoutes)
+
 
 app.listen(PORT)
 console.log(`listening on PORT ${PORT}`)

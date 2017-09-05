@@ -2,10 +2,14 @@
 
 (function () {
   angular.module('rpGame')
-        .controller('GameController', function (GameService, CharacterService) {
+        .controller('GameController', function (GameService, CharacterService, AuthService, $location) {
           console.log('game controller started...')
           const baseUrl = 'http://localhost:3002/api/'
           const self = this
+
+          if (!AuthService.isLoggedIn()) {
+              $location.path('/login')
+          }
           self.characterName = 'santi'
           self.hystoryPhaseText = `Despiertas en un pueblo, rodeado de gente que te observa. De fondo oyes como alguien grita tu nombre...\n Un señor de aspecto áspero y curtido. \n-"Vamos, Acompañame"- te dice`
           self.hystoryPhaseText = self.hystoryPhaseText.replace(/\n/g, '<br/>')
