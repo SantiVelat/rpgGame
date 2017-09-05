@@ -21,6 +21,8 @@
   "dependencies": {
     "express": "^4.15.4",
     "fs-readfile-promise": "^3.0.0",
+    "mongo": "^0.1.0",
+    "mongoose": "^4.11.10",
     "pug": "^2.0.0-rc.3"
   }
 }

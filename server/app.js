@@ -2,10 +2,18 @@ const express = require('express')
 const path = require('path')
 const app = express()
 const fs = require('fs-readfile-promise')
+const mongoose = require('mongoose')
 const PORT = process.env.PORT || 3002
 app.set('view engine', 'pug')
 app.use(express.static(path.join(__dirname, '../client')))
 app.set('views', path.join(__dirname, 'views'))
+
+const URL_DB = 'mongodb://admin:admingame@ds125914.mlab.com:25914/rpgame'
+mongoose.Promise = global.Promise
+mongoose.connect(URL_DB, {useMongoClient: true})
+
+const Enemy = require('./models/Enemies')
+const History = require('./models/History')
 
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
@@ -30,30 +38,27 @@ app.get('/register', (req, res) => {
 })
 /* Should module that part */
 
-const onResponse = function (data) {
-  return (data.toString())
-}
-const filterByidandSend = function (id, res, data) {
-  let phase = JSON.parse(data).filter(function (item) {
-    return item.id === id
-  })
-  res.send(JSON.stringify(phase))
-}
-
-const onRejected = err => console.log('Cannot read the file.' + err)
-
 app.get('/api/historyPhase/:id', (req, res) => {
   const id = req.params.id
-  fs('./server/history.json')
-  .then(onResponse, onRejected)
-  .then(filterByidandSend.bind(null, id, res))
+  History.find({ id })
+    .then(results => res.json(results))
+    .catch(err => res.json({ success: false, msg: err }))
 })
 
 app.get('/api/getEnemy/:id', (req, res) => {
   const id = req.params.id
-  fs('./server/enemies.json')
-  .then(onResponse, onRejected)
-  .then(filterByidandSend.bind(null, id, res))
+  console.log('entra 2')
+  Enemy.find({id})
+   .then(enemyMatched => {
+     res.json(enemyMatched)
+   })
+})
+app.get('/api/getEnemy', (req, res) => {
+  console.log('entra')
+  Enemy.find()
+   .then(enemyMatched => {
+     res.json(enemyMatched)
+   })
 })
 
 app.listen(PORT)

@@ -1,6 +1,6 @@
 [
   {
-	"id" : "2",
+	"id": "2",
 	"phaseDescription": "Te lleva hasta una casa en medio del bosque. Por el camino a penas te ha mirado... -'Pensaba que no volveria a verte'- ",
     "decisions": 
         {
@@ -21,7 +21,6 @@
         	}
         },
     "terrain":"forest-house"
-
   },
   {
     "id" : "3",
