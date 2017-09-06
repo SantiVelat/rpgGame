@@ -29,6 +29,8 @@
               'next': '4'
             }
           }
+
+          let setHistoryPrettified = (text) => text.replace(/\n/g, '<br/>')
           self.changeHistoryPhase = function (phaseId) {
             console.log('GameController.changeHistoryPhase iniciado...')
             const getPhaseUrl = baseUrl + 'historyPhase/' + phaseId
@@ -41,7 +43,7 @@
                 self.next = self.phase.next
               } else {
                 self.decisions = self.phase.decisions
-                self.hystoryPhaseText = self.phase.phaseDescription
+                self.hystoryPhaseText = setHistoryPrettified(self.phase.phaseDescription)
               }
             })
           }
