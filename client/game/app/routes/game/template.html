@@ -7,14 +7,14 @@
 				<div class="currenthealth" style="width: {{ charCtrl.getHealthPercentage() }}%">
 				</div>
 			</div>
-			<p class="healtnumber">{{ charCtrl.getHealthPercentage() }}%</p><!--This will be dinamic, based on the current health-->
+			<p class="healthnumber">{{ charCtrl.getHealthPercentage() }}%</p><!--This will be dinamic, based on the current health-->
 		</aside>
 		<div class="book text-center" style="opacity:0.9">
 			<span ng-if="gameCtrl.terrain=='combat'">
 			    <div class="totalhealth">
-				<div class="currenthealth" style="width: {{ gameCtrl.enemyHealth }}%">
+				<div class="current-enemy-health" style="width: {{ gameCtrl.enemyHealth }}%">
 				</div>
-			</div>
+				</div>
 			    <p class="history-context">{{ gameCtrl.combatContext }}</p>
 				<div class="decisions">
 				  <button class="btn btn-danger decision" ng-repeat="movement in gameCtrl.movements" ng-click="gameCtrl.combatMovement(movement)">{{ movement.description }}</button>
@@ -23,7 +23,7 @@
 			<span ng-if="gameCtrl.terrain!='combat'">
 				<p class="history-context" ng-bind-html="gameCtrl.hystoryPhaseText"></p>
 				<div class="decisions">
-				  <button class="btn btn-danger decision" ng-repeat="decision in gameCtrl.decisions" ng-click="gameCtrl.changeHistoryPhase(decision.next)">{{ decision.description }}</button>
+				  <button class="btn btn-primary decision" ng-repeat="decision in gameCtrl.decisions" ng-click="gameCtrl.changeHistoryPhase(decision.next)">{{ decision.description }}</button>
 	            </div>
 	        </span>		
 		</div>
