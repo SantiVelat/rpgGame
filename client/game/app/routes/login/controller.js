@@ -10,11 +10,9 @@
         .then(success => {
           if (success) {
             toastr.success('succesfully logged')
-            $location.path('/menu')
-          } else {
-            toastr.error('try again!')
+            $location.path('/')
           }
-        })
+        }).catch(err=>{toastr.error('wrong password or username')})
     }
   }
 })()

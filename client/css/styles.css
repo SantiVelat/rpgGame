@@ -14,6 +14,36 @@ src: url('../fonts/bloodcrowci.woff') format('woff');
 	font-size: 24px;
 }
 /*LOGIN & REGISTER STYLES*/
+.logintoRegister{
+	color:white;
+	margin-top: 10px;
+}
+.logintoRegister > p{
+    font-size: 60%;
+}
+.logintoRegister > p > a{
+	font-size:100%;
+	color: #31B639;
+}
+.logintoRegister > p > a:link{
+	font-size:100%;
+	color: #31B639;
+}
+.registertoLogin{
+	color:white;
+	margin-top: 10px;
+}
+.registertoLogin > p{
+    font-size: 60%;
+}
+.registertoLogin > p > a{
+	font-size:100%;
+	color: #3093DE;
+}
+.registertoLogin > p > a:link{
+	font-size:100%;
+	color: #3093DE;
+}
 .loginPage, body{
 	background-color: black
 	}
@@ -38,8 +68,8 @@ src: url('../fonts/bloodcrowci.woff') format('woff');
 	border-radius:3px;
 }
 .login-form{
-	height: 100%;
-	width:100%;
+	color: #D9D8D7;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 .register-form{
 	height: 100%;
