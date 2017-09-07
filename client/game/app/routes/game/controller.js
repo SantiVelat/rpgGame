@@ -4,7 +4,7 @@
   angular.module('rpGame')
         .controller('GameController', function (GameService, CharacterService, AuthService, $location,$timeout) {
           console.log('game controller started...')
-          const baseUrl = 'https://rpgame.herokuapp.com/'
+          const baseUrl = 'http://localhost:3002/api/'
           const self = this
 
           // if (!AuthService.isLoggedIn()) {
