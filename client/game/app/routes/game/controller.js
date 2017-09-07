@@ -2,7 +2,7 @@
 
 (function () {
   angular.module('rpGame')
-        .controller('GameController', function (GameService, CharacterService, AuthService, $location) {
+        .controller('GameController', function (GameService, CharacterService, AuthService, $location,$timeout) {
           console.log('game controller started...')
           const baseUrl = 'http://localhost:3002/api/'
           const self = this
@@ -10,25 +10,6 @@
           // if (!AuthService.isLoggedIn()) {
           //     $location.path('/login')
           // }
-          self.characterName = 'santi'
-          self.hystoryPhaseText = `Despiertas en un pueblo, rodeado de gente que te observa. De fondo oyes como alguien grita tu nombre...\n Un señor de aspecto áspero y curtido. \n-"Vamos, Acompañame"- te dice`
-          self.hystoryPhaseText = self.hystoryPhaseText.replace(/\n/g, '<br/>')
-          self.terrain = 'town'
-
-          self.decisions = /* data[0].decisions */ {
-            'decision': {
-              'description': 'Acompañar',
-              'next': '2'
-            },
-            'decision2': {
-              'description': 'Marcharse',
-              'next': '3'
-            },
-            'decision3': {
-              'description': 'Preguntar quien es',
-              'next': '4'
-            }
-          }
 
           let setHistoryPrettified = (text) => text.replace(/\n/g, '<br/>')
           self.changeHistoryPhase = function (phaseId) {
@@ -36,14 +17,21 @@
             const getPhaseUrl = baseUrl + 'historyPhase/' + phaseId
             GameService.getGamePath(getPhaseUrl, function (data) {
               self.phase = data[0]
-              self.terrain = self.phase.terrain
+              self.terrain = self.phase.terrain  
               if (self.terrain === 'combat') {
                 let enemies = self.phase.enemies[Math.floor(Math.random() * self.phase.enemies.length)]
                 self.getEnemy(enemies)
                 self.next = self.phase.next
               } else {
-                self.decisions = self.phase.decisions
-                self.hystoryPhaseText = setHistoryPrettified(self.phase.phaseDescription)
+                  if(self.phase.gameOver){
+                    console.log('entra al gameover')
+                    self.gameOver=true
+                    self.gameOverText=self.phase.gameOver
+                  }else{
+                    self.decisions = self.phase.decisions
+                    self.hystoryPhaseText = setHistoryPrettified(self.phase.phaseDescription)  
+                  }
+                  
               }
             })
           }
@@ -54,6 +42,8 @@
               self.combatContext = self.combatPhase.description
               self.enemyHealth = self.combatPhase.health
               self.movements = self.combatPhase.movements
+              self.enemyName = self.combatPhase.name
+              self.gameOverText=self.combatPhase.gameOver
             })
           }
 
@@ -70,7 +60,6 @@
                   self.changeHistoryPhase(self.next)
                 }, 2000)
               } else {
-                console.log(self.enemyHealth)
                 self.combatContext = movementStats.success
                 setTimeout(function () {
                   self.combatContext = self.combatPhase.description
@@ -79,13 +68,21 @@
               }
             } else {
               console.log('damage ' + movementStats.failDamage)
-
-              CharacterService.setCurrentHealth(CharacterService.getCurrentHealth() - movementStats.failDamage)
-
-              console.log(CharacterService.getCurrentHealth())
-
               self.combatContext = movementStats.fail
+              CharacterService.setCurrentHealth(CharacterService.getCurrentHealth() - movementStats.failDamage)
+              if (CharacterService.getCurrentHealth()==0){
+                console.log('entra a comparacion')
+                  $timeout(function(){
+                    self.gameOver = true
+                  } , 2000)
+              }
             }
           }
+          self.newGame=()=>{
+            self.gameOver=false
+            self.changeHistoryPhase(1)
+            CharacterService.setCurrentHealth(100)
+           }
+          self.newGame()
         })
 })()

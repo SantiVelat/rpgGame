@@ -11,9 +11,11 @@
 		</aside>
 		<div class="book text-center" style="opacity:0.9">
 			<span ng-if="gameCtrl.terrain=='combat'">
-			    <div class="totalhealth">
-				<div class="current-enemy-health" style="width: {{ gameCtrl.enemyHealth }}%">
-				</div>
+			    <span class="enemy-name">{{ gameCtrl.enemyName }}
+			    </span>
+			    <div class="total-enemy-health">
+					<div class="current-enemy-health" style="width: {{ gameCtrl.enemyHealth }}%">
+					</div>
 				</div>
 			    <p class="history-context">{{ gameCtrl.combatContext }}</p>
 				<div class="decisions">
@@ -25,10 +27,17 @@
 				<div class="decisions">
 				  <button class="btn btn-primary decision" ng-repeat="decision in gameCtrl.decisions" ng-click="gameCtrl.changeHistoryPhase(decision.next)">{{ decision.description }}</button>
 	            </div>
-	        </span>		
+	        </span>	
+	        <div ng-if="gameCtrl.gameOver" class="game-over container text-center" >
+				<span class="end-game col-md-12 text-center">GAME OVER</span><br>
+				<span class="why-dead col-md-12 text-center">{{ gameCtrl.gameOverText }}</span>
+				<div class="row text-center">
+					<button class="btn btn-danger btn-gameover col-xs-offset-3 col-xs-6" ng-click="gameCtrl.newGame()">INTÉNTALO DE NUEVO!</button>
+				</div>
+	        </div>	
 		</div>
 	</div>
-	<aside class="history-logs pull-right">
+	<aside class="history-logs pull-right hidden">
 		<!--with angular here will be appearing the last events, just showing the 20 lasts-->
 		<p>Has encontrado un <span class="enemy">lobo</span></p>
 		<p>Perdida de <span class="ownDamage">47</span> hp</p>
