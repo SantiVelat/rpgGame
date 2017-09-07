@@ -69,6 +69,15 @@ app.get('/api/getprogress/:username', (req, res) => {
    })
 })
 
+app.put('/api/savegame/:username/:health/:phase', (req, res) => {
+  const { username, health, phase } = req.params
+  User.findOneAndUpdate({ username }, {$set: { "currentHealth": health, "currentHistory": phase}})
+   .then(user => {
+    console.log('done!')
+     res.json({success: true, msg: "Successfully saved!"})
+   }).catch(err =>{ console.log(err)})
+});
+
 /* passport */
 
 const passport = require('./config/passport/')

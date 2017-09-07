@@ -169,6 +169,18 @@ src: url('../fonts/bloodcrowci.woff') format('woff');
 }
 /*GAME STYLES*/
 
+/*Logout*/
+.logout{
+	position:fixed;
+	bottom:60px;
+	left:20px;
+	height:50px;
+	width:50px;
+}
+.logout > a >img{
+	height:80px;
+	width:80px;
+}
 /*gameover*/
 .game-over{
     position:fixed;
@@ -207,7 +219,17 @@ src: url('../fonts/bloodcrowci.woff') format('woff');
 	font-size:170%;
 
 }
+/*Game-over end*/
 
+.sound-control, .sound-control:active, .sound-control:focus, .sound-control:hover{
+	position: fixed;
+	top:20px;
+	right:20px;
+	border-radius:50%;
+	background-color: #FFCB0C;
+	font-size:90%;
+	border:1px solid black;
+}
 .backgrounds{
 	min-height:100vh;
 	width:100vw;
@@ -409,6 +431,155 @@ span.lineal{
 	 white-space: normal;
 	 border: 2px outset #000;}
 
+/*SPINER*/
+ .spiner {
+    padding: 7px;
+    margin: 0;
+    height: 74px;
+    position: fixed;
+    bottom: 60px;
+    right: 10px;
+}
+.spiner > p{
+	color: #D8AB03;
+	font-size: 70%;
+}
+
+.ball,.ball1{
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    margin: 0 auto;
+    -webkit-box-sizing: initial;
+    -moz-box-sizing: initial;
+    box-sizing: initial;
+}
+ 
+ /*-- Circulo exterior --*/
+.ball {
+    border: 5px solid #33bdc0;
+    border-top: 5px solid rgba(51, 189, 192, 0.31);
+    border-left: 5px solid rgba(51, 189, 192, 0.31);
+    width: 50px;
+    height: 50px;
+    -webkit-animation: spin 1s infinite linear;
+    -o-animation: spin 1s infinite linear;
+    animation: spin 1s infinite linear;
+}
+  /*-- Circulo interior --*/
+.ball1 {
+    border: 5px solid #9fcc3e;
+    border-top: 5px solid rgba(159, 204, 62, 0.31);
+    border-left: 5px solid rgba(159, 204, 62, 0.31);
+    width: 26px;
+    height: 26px;
+    position: relative;
+    top: -48px;
+    -webkit-animation: spinoff 1s infinite linear;
+    -o-animation: spinoff 1s infinite linear;
+    animation: spinoff 1s infinite linear;
+}
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@-moz-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+ 
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+ 
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+ 
+/*-- SpinOff --*/
+ 
+@-webkit-keyframes spinoff {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);
+        -moz-transform: rotate(-360deg);
+        -ms-transform: rotate(-360deg);
+        -o-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+    }
+}
+@-moz-keyframes spinoff {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);
+        -moz-transform: rotate(-360deg);
+        -ms-transform: rotate(-360deg);
+        -o-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+    }
+}
+@keyframes spinoff {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);
+        -moz-transform: rotate(-360deg);
+        -ms-transform: rotate(-360deg);
+        -o-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+    }
+}
 
 /*GAME LOGS*/
  span.enemy{color:#FF5E1A;}span.ownDamage{color: #F40C00;}span.enemyDamage{color: #3C8EFF;}span.victory{color: #1BCA00;}span.terrain{color:#C68400;}span.object{color:#FFF729;}

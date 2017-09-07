@@ -35,6 +35,18 @@
 					<button class="btn btn-danger btn-gameover col-xs-offset-3 col-xs-6" ng-click="gameCtrl.newGame()">INTÉNTALO DE NUEVO!</button>
 				</div>
 	        </div>	
+	        <button class="btn btn-default sound-control" ng-click="gameCtrl.enableSound()">Sound: {{ gameCtrl.sound }} </button>
+	        <!-- Contendor -->
+			<div ng-if="gameCtrl.saving" class="spiner">
+			   <p>Guardando..</p>
+			    <!-- Circulo externo -->
+			    <div class="ball"></div>
+			    <!-- Circulo interno -->
+			    <div class="ball1"></div>
+			</div>
+			<div ng-controller="LogoutController as outCtrl" class="logout">
+				<a href="#" ng-click="outCtrl.logout()"><img src="../img/logout.png"/></a>
+			</div>
 		</div>
 	</div>
 	<aside class="history-logs pull-right hidden">

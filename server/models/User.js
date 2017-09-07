@@ -7,6 +7,10 @@ const UserSchema = new Schema({
     type: Number,
     required: true,
     default: 1
+  },
+  currentHealth: {
+  	type: Number,
+  	default: 100
   }
 })
 
