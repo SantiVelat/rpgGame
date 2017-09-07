@@ -12,8 +12,8 @@
 [![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 ## [FULL STACK PROJECT]
-
-[Check the functional version 1.0! All feedbacks will be welcomed!!]:https://rpgame.herokuapp.com
+[FULL STACK PROJECT]:https://rpgame.herokuapp.com
+Check the functional version 1.0! All feedbacks will be welcomed!!
 
 **Description**
 
@@ -105,11 +105,6 @@ The server part has multiple **API endpoints** using several routes:
 
 ---
 
-## Author
-
-[Santi Velat](https://github.com/SantiVelat/)
-
-
 **Pages**
 
 * Home
@@ -161,3 +156,11 @@ Respects the same structure than game page, but enemy health has her place on th
 Game over page, really seen on that game. Once you enter on game-over stage, there is no way for go back. User should start from the beginning if he wants keep playing 
 
 ![Game Over](img/game-over.png)
+
+
+
+## Author
+
+[Santi Velat](https://github.com/SantiVelat/)
+
+
