@@ -2,9 +2,9 @@
 
 (function () {
   angular.module('rpGame')
-        .controller('GameController', function (GameService, CharacterService, AuthService, $location,$timeout) {
+        .controller('GameController', function (GameService, CharacterService, AuthService, $location, $timeout) {
           console.log('game controller started...')
-          const baseUrl = 'http://localhost:3002/api/'
+          const baseUrl = 'https://rpgame.herokuapp.com/'
           const self = this
 
           // if (!AuthService.isLoggedIn()) {
@@ -17,21 +17,20 @@
             const getPhaseUrl = baseUrl + 'historyPhase/' + phaseId
             GameService.getGamePath(getPhaseUrl, function (data) {
               self.phase = data[0]
-              self.terrain = self.phase.terrain  
+              self.terrain = self.phase.terrain
               if (self.terrain === 'combat') {
                 let enemies = self.phase.enemies[Math.floor(Math.random() * self.phase.enemies.length)]
                 self.getEnemy(enemies)
                 self.next = self.phase.next
               } else {
-                  if(self.phase.gameOver){
-                    console.log('entra al gameover')
-                    self.gameOver=true
-                    self.gameOverText=self.phase.gameOver
-                  }else{
-                    self.decisions = self.phase.decisions
-                    self.hystoryPhaseText = setHistoryPrettified(self.phase.phaseDescription)  
-                  }
-                  
+                if (self.phase.gameOver) {
+                  console.log('entra al gameover')
+                  self.gameOver = true
+                  self.gameOverText = self.phase.gameOver
+                } else {
+                  self.decisions = self.phase.decisions
+                  self.hystoryPhaseText = setHistoryPrettified(self.phase.phaseDescription)
+                }
               }
             })
           }
@@ -43,7 +42,7 @@
               self.enemyHealth = self.combatPhase.health
               self.movements = self.combatPhase.movements
               self.enemyName = self.combatPhase.name
-              self.gameOverText=self.combatPhase.gameOver
+              self.gameOverText = self.combatPhase.gameOver
             })
           }
 
@@ -70,19 +69,19 @@
               console.log('damage ' + movementStats.failDamage)
               self.combatContext = movementStats.fail
               CharacterService.setCurrentHealth(CharacterService.getCurrentHealth() - movementStats.failDamage)
-              if (CharacterService.getCurrentHealth()==0){
+              if (CharacterService.getCurrentHealth() == 0) {
                 console.log('entra a comparacion')
-                  $timeout(function(){
-                    self.gameOver = true
-                  } , 2000)
+                $timeout(function () {
+                  self.gameOver = true
+                }, 2000)
               }
             }
           }
-          self.newGame=()=>{
-            self.gameOver=false
+          self.newGame = () => {
+            self.gameOver = false
             self.changeHistoryPhase(1)
             CharacterService.setCurrentHealth(100)
-           }
+          }
           self.newGame()
         })
 })()
