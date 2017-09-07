@@ -3,7 +3,7 @@ const passportLocalMongoose = require('passport-local-mongoose')
 const Schema = mongoose.Schema
 
 const UserSchema = new Schema({
-  currentHisotry: {
+  currentHistory: {
     type: Number,
     required: true,
     default: 1

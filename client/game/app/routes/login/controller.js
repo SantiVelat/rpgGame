@@ -12,7 +12,7 @@
             toastr.success('succesfully logged')
             $location.path('/')
           }
-        }).catch(err=>{toastr.error('wrong password or username')})
+        }).catch(err => { toastr.error('wrong password or username') })
     }
   }
 })()

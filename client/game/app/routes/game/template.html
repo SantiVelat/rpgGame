@@ -2,7 +2,7 @@
 	<div class="container-fluid">
 		<aside class="stats" ng-controller="CharacterController as charCtrl">
 			<figure class="lineal profileAvatar"><img src="../img/face.png"/></figure><!---The player image or some kind of default avatar-->
-			<span class="lineal charname">{{ charCtrl.characterName }}</span><!---with angular here goes the name of the player, or character-->
+			<span class="lineal charname">{{ charCtrl.username }}</span><!---with angular here goes the name of the player, or character-->
 			<div class="totalhealth">
 				<div class="currenthealth" style="width: {{ charCtrl.getHealthPercentage() }}%">
 				</div>

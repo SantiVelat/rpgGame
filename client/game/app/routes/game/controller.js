@@ -2,21 +2,20 @@
 
 (function () {
   angular.module('rpGame')
-        .controller('GameController', function (GameService, CharacterService, AuthService, $location, $timeout) {
+        .controller('GameController', function (GameService, CharacterService, AuthService, $location, $timeout, $rootScope) {
           console.log('game controller started...')
           // const baseUrl = 'https://rpgame.herokuapp.com/api/'
           const baseUrl = 'http://localhost:3002/api/'
           const self = this
 
-          // if (!AuthService.isLoggedIn()) {
-          //     $location.path('/login')
-          // }
-
           let setHistoryPrettified = (text) => text.replace(/\n/g, '<br/>')
+
           self.changeHistoryPhase = function (phaseId) {
-            console.log('GameController.changeHistoryPhase iniciado...')
             const getPhaseUrl = baseUrl + 'historyPhase/' + phaseId
             GameService.getGamePath(getPhaseUrl, function (data) {
+              if (CharacterService.getCurrentHealth() == 0 && phaseId == 1) {
+                CharacterService.setCurrentHealth(100)
+              }
               self.phase = data[0]
               self.terrain = self.phase.terrain
               if (self.terrain === 'combat') {
@@ -25,7 +24,6 @@
                 self.next = self.phase.next
               } else {
                 if (self.phase.gameOver) {
-                  console.log('entra al gameover')
                   self.gameOver = true
                   self.gameOverText = self.phase.gameOver
                 } else {
@@ -50,8 +48,6 @@
           self.combatMovement = function (movementStats) {
             console.log('combatMovement inicialized!')
             let result = (Math.floor(Math.random() * 100)) < movementStats.probability
-            console.log(result)
-            console.log(self.enemyHealth)
             if (result) {
               self.enemyHealth -= movementStats.successDamage
               if (self.enemyHealth <= 0) {
@@ -83,6 +79,8 @@
             self.changeHistoryPhase(1)
             CharacterService.setCurrentHealth(100)
           }
-          self.newGame()
+          GameService.getProgress(function (response) {
+            self.changeHistoryPhase(response.currentHistory)
+          })
         })
 })()
