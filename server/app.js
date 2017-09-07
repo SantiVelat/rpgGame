@@ -16,7 +16,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-const URL_DB = 'mongodb://admin:admingame@ds125914.mlab.com:25914/rpgame'
+const URL_DB = process.env.URL_DB
 mongoose.Promise = global.Promise
 mongoose.connect(URL_DB, {useMongoClient: true})
 

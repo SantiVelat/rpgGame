@@ -4,8 +4,8 @@
   angular.module('rpGame')
         .controller('GameController', function (SaveGameService, GameService, CharacterService, AuthService, $location, $timeout, $rootScope) {
           console.log('game controller started...')
-          // const baseUrl = 'https://rpgame.herokuapp.com/api/'
-          const baseUrl = 'http://localhost:3002/api/'
+          const baseUrl = 'https://rpgame.herokuapp.com/api/'
+          // const baseUrl = 'http://localhost:3002/api/'
           const self = this
           
           let setHistoryPrettified = (text) => text.replace(/\n/g, '<br/>')

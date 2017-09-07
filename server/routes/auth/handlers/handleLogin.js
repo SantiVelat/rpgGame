@@ -1,7 +1,7 @@
 var jwt = require('jsonwebtoken')
 
 function handleLogin (req, res) {
-  const SECRET = process.env.SECRET || 'nopillonada'
+  const SECRET = process.env.SECRET
   const { _id: id, username } = req.user
 
   const token = jwt.sign({ id, username }, SECRET)
