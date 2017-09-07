@@ -4,11 +4,10 @@
     .factory('AuthService', AuthService)
 
   function AuthService ($rootScope, $http, StorageService, jwtHelper) {
-
     function isLoggedIn () {
       const token = StorageService.getToken()
       if (!token) return false
-     	return true
+      return true
     }
 
     function setCredentials (token) {
