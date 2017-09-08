@@ -7,7 +7,7 @@
           const baseUrl = 'https://rpgame.herokuapp.com/api/'
           // const baseUrl = 'http://localhost:3002/api/'
           const self = this
-          
+
           let setHistoryPrettified = (text) => text.replace(/\n/g, '<br/>')
 
           self.changeHistoryPhase = function (phaseId) {
@@ -29,6 +29,9 @@
                   self.setSound('gameOver')
                   self.gameOver = true
                   self.gameOverText = self.phase.gameOver
+                } else if (self.phase.toBeContinued) {
+                  self.toBeContinued = true
+                  self.toBecontinued = self.phase.toBeContinued
                 } else {
                   self.decisions = self.phase.decisions
                   self.hystoryPhaseText = setHistoryPrettified(self.phase.phaseDescription)
@@ -82,45 +85,45 @@
           }
           self.newGame = () => {
             self.gameOver = false
+            self.toBeContinued = false
             self.changeHistoryPhase(1)
             CharacterService.setCurrentHealth(100)
             self.setSound('town')
           }
 
           self.autoSaveGame = () => {
-                const userStatsUrl = baseUrl + 'savegame/' + $rootScope.loggedUser + '/'+ CharacterService.getCurrentHealth() +'/'+ self.phase.id
-                SaveGameService.saveGame(userStatsUrl, (response)=>{
-                  console.log(response)
-                })
-                self.saving=true
-                $timeout(function (){
-                  self.saving=false
-                }, 2000)
+            const userStatsUrl = baseUrl + 'savegame/' + $rootScope.loggedUser + '/' + CharacterService.getCurrentHealth() + '/' + self.phase.id
+            SaveGameService.saveGame(userStatsUrl, (response) => {
+              console.log(response)
+            })
+            self.saving = true
+            $timeout(function () {
+              self.saving = false
+            }, 2000)
           }
-          self.soundOn=true;
-          self.sound='on'
-          self.setSound = (sound) =>{
-            if(self.soundOn===true){
-               if(self.audio){self.audio.pause()}
-               let src
-               if(sound==='combat'){
-                  src='../src/sounds/Battle.mp3'
-               }else if(sound==='gameOver'){
-                  src='../src/sounds/dead.mp3'
-               }else if(sound==='win'){
-                  src='../src/sounds/win.mp3'
-               }
-                else{
-                  src='../src/sounds/town.mp3'
-               }
-               self.audio = new Audio(src);
-                 self.audio.play();
+          self.soundOn = true
+          self.sound = 'on'
+          self.setSound = (sound) => {
+            if (self.soundOn === true) {
+              if (self.audio) { self.audio.pause() }
+              let src
+              if (sound === 'combat') {
+                src = '../src/sounds/Battle.mp3'
+              } else if (sound === 'gameOver') {
+                src = '../src/sounds/dead.mp3'
+              } else if (sound === 'win') {
+                src = '../src/sounds/win.mp3'
+              } else {
+                src = '../src/sounds/town.mp3'
               }
+              self.audio = new Audio(src)
+              self.audio.play()
+            }
           }
           self.enableSound = () => {
-            self.soundOn=!self.soundOn;
+            self.soundOn = !self.soundOn
             !self.soundOn ? self.audio.pause() : self.setSound()
-            self.sound= !self.soundOn ? 'off' : 'on'
+            self.sound = !self.soundOn ? 'off' : 'on'
           }
           GameService.getProgress(function (response) {
             self.setSound()
