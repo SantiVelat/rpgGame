@@ -31,7 +31,7 @@
                   self.gameOverText = self.phase.gameOver
                 } else if (self.phase.toBeContinued) {
                   self.toBeContinued = true
-                  self.toBecontinued = self.phase.toBeContinued
+                  self.toBecontinuedText = self.phase.toBeContinued
                 } else {
                   self.decisions = self.phase.decisions
                   self.hystoryPhaseText = setHistoryPrettified(self.phase.phaseDescription)
