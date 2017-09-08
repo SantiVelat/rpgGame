@@ -111,31 +111,31 @@ The server part has multiple **API endpoints** using several routes:
 
 Explicative page, game presentation and basic knowledges 
 
-![Home](img/home.png)
+![Home](img/home.PNG)
 
 * Global-scores
 
 Here are the top gamers, who have done largest ways keeping them alive
 
-![Score](img/scores.png)
+![Score](img/scores.PNG)
 
 * About
 
 Explication page, introduces the creator, the objectives and let open gates to know people with new initiatives
 
-![About](img/about.png)
+![About](img/about.PNG)
 
 * Register
 
 Register page, need to cross it to start playing, but anyway is a non-intrusive register, just username and password 
 
-![Register](img/register.png)
+![Register](img/register.PNG)
 
 * Login
 
 Login page, usual comprobation of user and password made with passport. This step is also used to storage a token on client machine. Preventing users to make repetitive logins.
 
-![Login](img/login.png)
+![Login](img/login.PNG)
 
 * Game
 
@@ -143,20 +143,25 @@ Game view, character information on top left. Enable/Disable game music with the
 
 The middle of the screen is reserved for the history and decision interfaces.
 
-![Game](img/game-view.png)
+![Game](img/game-view.PNG)
 
 * Combat
 
 Respects the same structure than game page, but enemy health has her place on the middle, next no the enemy name..
 
-![Combat](img/combat-view.png)
+![Combat](img/combat-view.PNG)
 
 * Game Over
 
 Game over page, really seen on that game. Once you enter on game-over stage, there is no way for go back. User should start from the beginning if he wants keep playing 
 
-![Game Over](img/game-over.png)
+![Game Over](img/game-over.PNG)
 
+
+
+* Bugs detected on version 1.0
+  - Pressing Disable/Enable music on combat stage will play the town(non-combat) song.
+  - Leaving the game during a combat will produce the enemy health restore
 
 
 ## Author
