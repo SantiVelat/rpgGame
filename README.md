@@ -162,6 +162,12 @@ Game over page, really seen on that game. Once you enter on game-over stage, the
 * Bugs detected on version 1.0
   - Pressing Disable/Enable music on combat stage will play the town(non-combat) song.
   - Leaving the game during a combat will produce the enemy health restore
+  
+* Next updates
+  - Fix bugs
+  - Implement global-score
+  - modularize all app.js script
+  - add second part of the history
 
 
 ## Author
